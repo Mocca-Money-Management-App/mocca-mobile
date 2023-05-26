@@ -5,12 +5,12 @@
     <item
         android:id="@+id/navigation_home"
         android:title="Home"
-        android:icon="@drawable/ic_home" />
+        android:icon="@drawable/ic_home_selector" />
 
     <item
         android:id="@+id/navigation_budget"
         android:title="Budget"
-        android:icon="@drawable/ic_balance_wallet" />
+        android:icon="@drawable/ic_budget_selector" />
 
     <item android:id="@+id/placeholder"
         android:title=""/>
@@ -18,7 +18,7 @@
     <item
         android:id="@+id/navigation_report"
         android:title="Report"
-        android:icon="@drawable/ic_receipt" />
+        android:icon="@drawable/ic_report_selector" />
 
     <item
         android:id="@+id/navigation_profile"
