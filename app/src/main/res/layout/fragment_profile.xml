@@ -1,13 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_three"
     tools:context=".ui.profile.ProfileFragment">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/layout_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile Fragment" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:layout_marginTop="8dp"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_profile"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_top_bar">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:contentDescription="Profile Picture"
+            android:src="@drawable/profile_pic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Elmifta"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:text="elmifta@gmail.com"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_profile"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/tv_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_profile"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Edit Profile"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_notification"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Notification"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_language"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Language"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_theme"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Theme"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_syarat_ketentuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_syarat_ketentuan"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="@string/txt_syarat_ketentuan"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_bantuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_bantuan"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Bantuan"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:background="@drawable/background_button_profile"
+        android:text="Logout"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
