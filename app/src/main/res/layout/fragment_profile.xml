@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_sans_bold"
             android:layout_marginTop="8dp"
+            android:paddingBottom="4dp"
             android:text="Profile"
             android:textColor="@color/black"
             android:textSize="22sp" />
@@ -170,7 +171,7 @@
             android:fontFamily="@font/nunito_sans_semibold"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
-            android:text="Bantuan"
+            android:text="Help"
             android:textColor="@color/black" />
     </LinearLayout>
 
