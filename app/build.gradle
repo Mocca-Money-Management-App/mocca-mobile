@@ -105,6 +105,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
 
 
+    // Chart
+    implementation 'co.yml:ycharts:2.0.0'
+
     // Testing depedencies
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
