@@ -260,6 +260,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_label_recent_transaction"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_transaction_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="No Transaction Yet"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/tv_label_recent_transaction"
+        app:layout_constraintTop_toBottomOf="@+id/tv_label_recent_transaction" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_transactions"
         android:layout_width="match_parent"
