@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Mocca</string>
+
+    <string name="login">Login</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="email_hint">Your Email</string>
+    <string name="password_hint">Your Password</string>
+    <string name="app_logo_white">Mocca\n Logo White</string>
+    <string name="no_account">Don’t have account yet?</string>
+
+    <string name="register">Register</string>
+    <string name="register_btn">REGISTER</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name_hint">Your Name</string>
+    <string name="phone_number_hint">Your Phone Number</string>
+    <string name="have_account">Already have an account?</string>
+
+    <string name="no_empty">This field cannot be empty</string>
+    <string name="more_than_8">Password must contain more than 8 characters</string>
 </resources>
