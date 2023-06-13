@@ -24,4 +24,21 @@
     <string name="no_empty">This field cannot be empty</string>
     <string name="more_than_8">Password must contain more than 8 characters</string>
 
+    object ApiConfig {
+        companion object {
+            fun getApiService(): ApiService {
+                val loggingInterceptor = HttpLoggingInterceptor()
+                    .setLevel(HttpLoggingInterceptor.Level.BODY)
+                val client = OkHttpClient.Builder()
+                    .addInterceptor(loggingInterceptor)
+                    .build()
+                val retrofit = Retrofit.Builder()
+                    .baseURL(BASE_URL)
+                    .addConferterFactory (GsonConverterFactory.create())
+                    .client(client)
+                    .build()
+                return retrofit.create(ApiService::class.java)
+            }
+        }
+    }
 </resources>
