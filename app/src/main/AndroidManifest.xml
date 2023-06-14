@@ -33,7 +33,7 @@
         android:theme="@style/Theme.Mocca"
         tools:targetApi="31">
         <activity
-            android:name=".ListTransactionActivity"
+            android:name=".ui.transaction.ocr.ListTransactionActivity"
             android:exported="false" />
         <activity
             android:name=".ui.transaction.ocr.OCRTransactionActivity"

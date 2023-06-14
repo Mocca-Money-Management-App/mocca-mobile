@@ -1,10 +1,12 @@
 package com.bangkit.mocca.ui.transaction.ocr
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -19,6 +21,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import com.bangkit.mocca.data.Result
+import com.bangkit.mocca.data.remote.response.OcrResponse
 import com.bangkit.mocca.utils.uriToFile
 
 class OCRTransactionActivity : CropImageActivity() {
@@ -70,11 +73,14 @@ class OCRTransactionActivity : CropImageActivity() {
                     is Result.Loading -> showLoading(true)
 
                     is Result.Success -> {
-                       Toast.makeText(
+                        Toast.makeText(
                            this,
                            "Sukses upload gambar",
                            Toast.LENGTH_SHORT
-                       ).show()
+                        ).show()
+
+                        val product = result.data
+                        ListTransactionActivity.intent(this, product)
                     }
 
                     is Result.Error -> {
