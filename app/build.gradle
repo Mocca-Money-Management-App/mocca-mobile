@@ -20,6 +20,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField ("String", "BASE_URL", '"https://nodejs-production-6006.up.railway.app/"')
     }
 
     buildFeatures {
