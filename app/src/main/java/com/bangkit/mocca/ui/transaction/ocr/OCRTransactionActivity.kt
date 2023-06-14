@@ -3,30 +3,30 @@ package com.bangkit.mocca.ui.transaction.ocr
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Matrix
-import android.media.ExifInterface
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
 import com.bangkit.mocca.databinding.ActivityOcrtransactionBinding
-import com.bangkit.mocca.utils.createCustomTempFile
+import com.bangkit.mocca.utils.reduceFileImage
 import com.canhub.cropper.CropImage
 import com.canhub.cropper.CropImageActivity
-import com.canhub.cropper.CropImageOptions
-import com.canhub.cropper.CropImageView
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
+import com.bangkit.mocca.data.Result
+import com.bangkit.mocca.utils.uriToFile
 
 class OCRTransactionActivity : CropImageActivity() {
 
     private lateinit var binding: ActivityOcrtransactionBinding
-    private lateinit var currentPhotoPath: String
+
+    private val ocrViewModel by viewModels<OcrViewModel>()
+    private var getFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +43,10 @@ class OCRTransactionActivity : CropImageActivity() {
             )
         }
 
+        ocrViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+
         binding.btnCrop.setOnClickListener { cropImage() }
 
         binding.btnScanImage.setOnClickListener {
@@ -53,7 +57,42 @@ class OCRTransactionActivity : CropImageActivity() {
     }
 
     private fun uploadImage() {
+        if (getFile != null) {
+            val requestFile = reduceFileImage(getFile as File)
+            val requestImageFile = requestFile.asRequestBody("image/jpeg".toMediaType())
+            val imageMultiPart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "scan", requestFile.name, requestImageFile
+            )
 
+            ocrViewModel.uploadImage(photo = imageMultiPart)
+            ocrViewModel.scanImageResult.observe(this) { result ->
+                when (result) {
+                    is Result.Loading -> showLoading(true)
+
+                    is Result.Success -> {
+                       Toast.makeText(
+                           this,
+                           "Sukses upload gambar",
+                           Toast.LENGTH_SHORT
+                       ).show()
+                    }
+
+                    is Result.Error -> {
+                        Toast.makeText(
+                            this,
+                            "Gagal upload gambar",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            }
+        } else {
+            Toast.makeText(
+                this,
+                "Tidak ada gambar yang di pilih/diambil",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     override fun onPickImageResult(resultUri: Uri?) {
@@ -81,6 +120,10 @@ class OCRTransactionActivity : CropImageActivity() {
             sampleSize = sampleSize
         )
 
+        val selectedImage: Uri = result.uriContent as Uri
+        val file = uriToFile(selectedImage, this)
+        getFile = file
+
         binding.cropImageView.setImageUriAsync(result.uriContent)
     }
 
@@ -107,53 +150,9 @@ class OCRTransactionActivity : CropImageActivity() {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
-//    private val launcherIntentCamera = registerForActivityResult(
-//        ActivityResultContracts.StartActivityForResult()
-//    ) {
-//        if (it.resultCode == RESULT_OK) {
-//            val myFile = File(currentPhotoPath)
-//            myFile.let { file ->
-//                val exifInterface = ExifInterface(currentPhotoPath)
-//                val rotation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)
-//                val rotationInDegrees = exifToDegrees(rotation)
-//
-//                val bitmap = BitmapFactory.decodeFile(file.path)
-//                val rotatedBitmap = rotateBitmap(bitmap, rotationInDegrees)
-//                binding.cropImageView.setImageBitmap(rotatedBitmap)
-//            }
-//        }
-//    }
-
-//    private fun rotateBitmap(bitmap: Bitmap, degrees: Float): Bitmap {
-//        val matrix = Matrix()
-//        matrix.postRotate(degrees)
-//        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix,true)
-//    }
-//
-//    private fun exifToDegrees(exifOrientation: Int): Float {
-//        return when(exifOrientation) {
-//            ExifInterface.ORIENTATION_ROTATE_90 -> 90F
-//            ExifInterface.ORIENTATION_ROTATE_180 -> 180F
-//            ExifInterface.ORIENTATION_ROTATE_270 -> 270F
-//            else -> 0F
-//        }
-//    }
-
-//    private fun startTakePhoto() {
-//        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//        intent.resolveActivity(packageManager)
-//
-//        createCustomTempFile(application).also {
-//            val photoURI: Uri = FileProvider.getUriForFile(
-//                this@OCRTransactionActivity,
-//                "com.bangkit.mocca",
-//                it
-//            )
-//            currentPhotoPath = it.absolutePath
-//            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-//            launcherIntentCamera.launch(intent)
-//        }
-//    }
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
 
     companion object {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
