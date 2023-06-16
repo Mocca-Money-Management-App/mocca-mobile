@@ -101,6 +101,7 @@
             android:paddingBottom="4dp"
             android:text="@string/edit_profile"
             android:textColor="@color/black"
+            android:visibility="gone"
             app:drawableStartCompat="@drawable/ic_profile"
             app:drawableEndCompat="@drawable/ic_chevron_right" />
 

@@ -78,7 +78,7 @@ class EditBudgetActivity : AppCompatActivity() {
                     }
 
                     getUser().observe(this@EditBudgetActivity) { result ->
-                        addCategory(result.idUser, category, budget)
+                        addCategory(1, category, budget)
                         success.observe(this@EditBudgetActivity) {
                             if (it == "Edit successful") {
                                 successEditBudget()
@@ -95,7 +95,7 @@ class EditBudgetActivity : AppCompatActivity() {
     private fun successEditBudget() {
         AlertDialog.Builder(this).apply {
             setTitle(getString(R.string.congrats))
-            setMessage(getString(R.string.add_budget_success))
+            setMessage(getString(R.string.edit_budget_success))
             setPositiveButton(getString(R.string.ok)) { _, _ ->
                 val intent = Intent(this@EditBudgetActivity, MainActivity::class.java)
                 startActivity(intent,
