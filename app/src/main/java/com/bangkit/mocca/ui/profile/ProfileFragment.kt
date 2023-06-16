@@ -56,6 +56,11 @@ class ProfileFragment : Fragment() {
         binding.switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
             profileViewModel.saveTheme(isChecked)
         }
+
+        binding.tvNotification.setOnClickListener {
+            val intent = Intent(activity, AlarmActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupViewModel() {

@@ -138,5 +138,9 @@
         <item>Investasi</item>
     </string-array>
 
-
+    <string name="alarm_time">Alarm Time</string>
+    <string name="set_repeating_alarm">Set Repeating Alarm</string>
+    <string name="alarm_transaction_message">Don\'t forget to save your transaction</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="daily_reminder_setting">Daily Reminder Setting</string>
 </resources>
