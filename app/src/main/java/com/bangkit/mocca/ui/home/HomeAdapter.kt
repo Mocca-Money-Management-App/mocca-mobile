@@ -4,14 +4,9 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit.mocca.R
-import com.bangkit.mocca.data.online.response.ListTransactionItem
+import com.bangkit.mocca.data.remote.response.transaction.ListTransactionItem
 import com.bangkit.mocca.databinding.TransactionItemBinding
 import com.bangkit.mocca.utils.toCurrencyFormat
-import java.text.NumberFormat
-import java.text.SimpleDateFormat
-import java.util.ArrayList
-import java.util.Locale
 
 class HomeAdapter(private val listTransaction: List<ListTransactionItem>): RecyclerView.Adapter<HomeAdapter.ListViewHolder>() {
     class ListViewHolder (var binding: TransactionItemBinding): RecyclerView.ViewHolder(binding.root)

@@ -7,16 +7,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.bangkit.mocca.data.model.UserModel
 import com.bangkit.mocca.data.model.UserPreference
-import com.bangkit.mocca.data.online.api.ApiConfig
-import com.bangkit.mocca.data.online.response.ListCategoryItem
-import com.bangkit.mocca.data.online.response.ListTransactionItem
-import com.bangkit.mocca.data.online.response.ReportItem
-import com.bangkit.mocca.data.online.response.ReportResponse
-import com.bangkit.mocca.data.online.response.TransactionResponse
+import com.bangkit.mocca.data.remote.retrofit.ApiConfig
+import com.bangkit.mocca.data.remote.response.transaction.ListTransactionItem
+import com.bangkit.mocca.data.remote.response.report.ReportItem
+import com.bangkit.mocca.data.remote.response.report.ReportResponse
+import com.bangkit.mocca.data.remote.response.transaction.TransactionResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
 
 class HomeViewModel(
     private val pref : UserPreference

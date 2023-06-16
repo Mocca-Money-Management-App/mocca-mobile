@@ -1,29 +1,20 @@
-package com.bangkit.mocca.data.online.api
+package com.bangkit.mocca.data.remote.retrofit
 
-import com.bangkit.mocca.data.online.response.BudgetResponse
-import com.bangkit.mocca.data.online.response.CategoryResponse
-import com.bangkit.mocca.data.online.response.EditResponse
-import com.bangkit.mocca.data.online.response.LoginResponse
-import com.bangkit.mocca.data.online.response.RegisterResponse
-import com.bangkit.mocca.data.online.response.ReportResponse
-import com.bangkit.mocca.data.online.response.TransactionResponse
-import com.bangkit.mocca.data.online.response.UploadResponse
+import com.bangkit.mocca.data.remote.response.budget.BudgetResponse
+import com.bangkit.mocca.data.remote.response.category.CategoryResponse
+import com.bangkit.mocca.data.remote.response.transaction.EditResponse
+import com.bangkit.mocca.data.remote.response.auth.LoginResponse
+import com.bangkit.mocca.data.remote.response.auth.RegisterResponse
+import com.bangkit.mocca.data.remote.response.report.ReportResponse
+import com.bangkit.mocca.data.remote.response.transaction.TransactionResponse
+import com.bangkit.mocca.data.remote.response.ocr.InsertTransactionListResponse
+import com.bangkit.mocca.data.remote.response.ocr.OcrListResponse
+import com.bangkit.mocca.data.remote.response.ocr.OcrResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
-import retrofit2.http.DELETE
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Part
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiService {
-    @POST("upload")
-    fun upload(
-        @Part photo: MultipartBody.Part
-    ): Call<UploadResponse>
 
     @GET("totalbudget/{idUser}")
     fun getTotalBudget(
@@ -84,6 +75,19 @@ interface ApiService {
         @Path("categoryId") categoryId: Int,
         @Field("budget") budget: Float,
     ): Call<EditResponse>
+
+    // Automatic Input
+    @Multipart
+    @POST("upload")
+    fun postImage(
+        @Part photo: MultipartBody.Part
+    ) : Call<OcrListResponse>
+
+    @POST("insertoutcome/{idUser}")
+    fun postListTransaction(
+        @Path("idUser") userId: Int,
+        @Body transactions: List<OcrResponse>
+    ) : Call<InsertTransactionListResponse>
 
     @FormUrlEncoded
     @POST("login")

@@ -1,4 +1,4 @@
-package com.bangkit.mocca.data.online.response
+package com.bangkit.mocca.data.remote.response.transaction
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

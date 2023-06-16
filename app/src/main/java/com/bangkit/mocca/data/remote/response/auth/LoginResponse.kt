@@ -1,4 +1,4 @@
-package com.bangkit.mocca.data.online.response
+package com.bangkit.mocca.data.remote.response.auth
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -13,7 +13,7 @@ data class LoginResponse(
     val message: String,
 
     @SerializedName("data")
-    val data:LoginData
+    val data: LoginData
 ): Parcelable
 
 @Parcelize

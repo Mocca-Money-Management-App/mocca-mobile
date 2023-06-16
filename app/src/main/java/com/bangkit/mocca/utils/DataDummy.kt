@@ -1,6 +1,6 @@
 package com.bangkit.mocca.utils
 
-import com.bangkit.mocca.model.TransactionModel
+import com.bangkit.mocca.data.model.TransactionModel
 
 object DataDummy {
 

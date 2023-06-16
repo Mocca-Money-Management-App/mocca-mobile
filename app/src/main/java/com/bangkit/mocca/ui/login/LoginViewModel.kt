@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bangkit.mocca.data.model.UserModel
 import com.bangkit.mocca.data.model.UserPreference
-import com.bangkit.mocca.data.online.api.ApiConfig
-import com.bangkit.mocca.data.online.response.LoginResponse
+import com.bangkit.mocca.data.remote.retrofit.ApiConfig
+import com.bangkit.mocca.data.remote.response.auth.LoginResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

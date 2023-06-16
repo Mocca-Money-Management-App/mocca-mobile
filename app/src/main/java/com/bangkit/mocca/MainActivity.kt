@@ -27,6 +27,7 @@ import com.bangkit.mocca.databinding.ActivityMainBinding
 import com.bangkit.mocca.ui.home.HomeFragment
 import com.bangkit.mocca.ui.home.HomeViewModel
 import com.bangkit.mocca.ui.transaction.manual.ManualTransactionActivity
+import com.bangkit.mocca.ui.transaction.ocr.OCRTransactionActivity
 import com.bangkit.mocca.utils.ViewModelFactory
 import com.bangkit.mocca.utils.dataStore
 //import com.bangkit.mocca.ui.transaction.ocr.OCRTransactionActivity
@@ -70,10 +71,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        btnTransactionOCR.setOnClickListener {
-//            val intent = Intent(this, OCRTransactionActivity::class.java)
-//            startActivity(intent)
-//        }
+        btnTransactionOCR.setOnClickListener {
+            val intent = Intent(this, OCRTransactionActivity::class.java)
+            startActivity(intent)
+        }
 
         dialog.show()
         dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)

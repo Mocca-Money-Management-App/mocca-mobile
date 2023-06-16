@@ -1,4 +1,4 @@
-package com.bangkit.mocca.data.online.api
+package com.bangkit.mocca.data.remote.retrofit
 
 import com.bangkit.mocca.BuildConfig
 import okhttp3.OkHttpClient

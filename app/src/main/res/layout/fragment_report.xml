@@ -30,43 +30,6 @@
             android:textSize="22sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans_semibold"
-        android:text="@string/month_2023"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_top_bar" />
-
-    <ImageButton
-        android:id="@+id/btn_previous"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/button_date_previous"
-        android:background="@drawable/circle_button"
-        android:src="@drawable/ic_chevron_left_white"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
-        app:layout_constraintEnd_toStartOf="@+id/tv_date"
-        app:layout_constraintTop_toTopOf="@+id/tv_date" />
-
-    <ImageButton
-        android:id="@+id/btn_next"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/circle_button"
-        android:src="@drawable/ic_chevron_right_white"
-        android:contentDescription="@string/button_date_next"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
-        app:layout_constraintStart_toEndOf="@+id/tv_date"
-        app:layout_constraintTop_toTopOf="@+id/tv_date" />
-
     <LinearLayout
         android:id="@+id/card_total_report"
         android:layout_width="match_parent"
@@ -77,7 +40,7 @@
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_previous">
+        app:layout_constraintTop_toBottomOf="@+id/layout_top_bar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,8 +55,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nunito_sans_bold"
                 android:text="@string/total_income"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_total_income"
@@ -102,9 +65,9 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nunito_sans_bold"
                 android:text="@string/rp0_budget_1"
-                android:textSize="16sp"
                 android:textAlignment="textEnd"
-                android:textColor="@color/primary_one" />
+                android:textColor="@color/primary_one"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -120,8 +83,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nunito_sans_bold"
                 android:text="@string/total_expenses"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_total_expenses"
@@ -130,9 +93,9 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nunito_sans_bold"
                 android:text="@string/rp0_budget_2"
-                android:textSize="16sp"
                 android:textAlignment="textEnd"
-                android:textColor="@color/danger_one" />
+                android:textColor="@color/danger_one"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,8 +110,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nunito_sans_bold"
                 android:text="@string/difference"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_difference"
@@ -157,9 +120,9 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nunito_sans_bold"
                 android:text="@string/rp0_budget_item_1"
-                android:textSize="16sp"
                 android:textAlignment="textEnd"
-                android:textColor="@color/info_one" />
+                android:textColor="@color/info_one"
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 

@@ -2,11 +2,9 @@ package com.bangkit.mocca.ui.budget
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit.mocca.data.online.response.ListCategoryItem
+import com.bangkit.mocca.data.remote.response.category.ListCategoryItem
 import com.bangkit.mocca.databinding.BudgetItemBinding
-import com.bangkit.mocca.utils.toCurrencyFormat
 import com.bangkit.mocca.utils.toMoneyFormat
 
 class BudgetAdapter(private val listCategory: List<ListCategoryItem>): RecyclerView.Adapter<BudgetAdapter.ListViewHolder>() {

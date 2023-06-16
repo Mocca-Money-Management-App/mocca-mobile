@@ -1,4 +1,4 @@
-package com.bangkit.mocca.model
+package com.bangkit.mocca.data.model
 
 data class TransactionModel (
     val id: Int,

@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.bangkit.mocca.data.model.UserModel
 import com.bangkit.mocca.data.model.UserPreference
-import com.bangkit.mocca.data.online.api.ApiConfig
-import com.bangkit.mocca.data.online.response.EditResponse
+import com.bangkit.mocca.data.remote.retrofit.ApiConfig
+import com.bangkit.mocca.data.remote.response.transaction.EditResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
