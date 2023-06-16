@@ -10,11 +10,11 @@ data class UploadResponse(
     val success: Int,
 
     @SerializedName("product")
-    val listStory: List<ListProductItem>
+    val listStory: List<ListUploadItem>
 ) : Parcelable
 
 @Parcelize
-data class ListProductItem(
+data class ListUploadItem(
     @SerializedName("name_product")
     val name_product: String,
 

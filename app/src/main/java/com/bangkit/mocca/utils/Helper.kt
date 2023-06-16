@@ -8,14 +8,39 @@ import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
 import android.os.Environment
+import android.util.Patterns
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import com.bangkit.mocca.R
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Locale
+
+fun String.isValidPassword() = !isNullOrEmpty() && this.count() >= 8
+fun CharSequence?.isValidEmail() = !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
+fun String.toCurrencyFormat(): String {
+    val idIndo = Locale("in", "ID")
+    val value = this.toDoubleOrNull() ?: return this
+    val format = NumberFormat.getCurrencyInstance(idIndo)
+    format.minimumFractionDigits = 0
+    return format.format(value)
+}
+
+fun String.toMoneyFormat(): String {
+    val idIndo = Locale("in", "ID")
+    val value = this.toDoubleOrNull() ?: return this
+    val format = NumberFormat.getInstance(idIndo)
+    format.minimumFractionDigits = 0
+    return format.format(value)
+}
 
 private const val FILENAME_FORMAT = "dd-MMM-yyyy"
 

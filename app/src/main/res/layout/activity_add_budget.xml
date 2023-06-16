@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.budget.AddBudgetActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:paddingBottom="4dp"
+            android:text="@string/add_category"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="@string/budget"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_top_bar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_budget_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_budget">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_budget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/nominal"
+            android:inputType="number"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="Budget Category"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_budget_layout" />
+
+    <RadioGroup
+        android:id="@+id/rg_category1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_category">
+
+        <RadioButton
+            android:id="@+id/rb_category1"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_shopping"
+            android:text="@string/belanja"
+            android:fontFamily="@font/nunitosans_regular"
+            android:textAlignment="center"
+            android:background="@drawable/bg_radio_button"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_category2"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_food_drink"
+            android:text="@string/makanan_minuman"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunitosans_regular"
+            android:background="@drawable/bg_radio_button"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_category3"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_beauty"
+            android:text="@string/kesehatan_kecantikan"
+            android:fontFamily="@font/nunitosans_regular"
+            android:textAlignment="center"
+            android:background="@drawable/bg_radio_button"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_category2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_category1">
+
+        <RadioButton
+            android:id="@+id/rb_category4"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_school"
+            android:text="@string/pendidikan"
+            android:fontFamily="@font/nunitosans_regular"
+            android:textAlignment="center"
+            android:background="@drawable/bg_radio_button"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_category5"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_transportation"
+            android:text="@string/transportasi"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunitosans_regular"
+            android:background="@drawable/bg_radio_button"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_category6"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_money"
+            android:text="@string/pinjaman_tagihan"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunitosans_regular"
+            android:background="@drawable/bg_radio_button"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_category3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_category2">
+
+        <RadioButton
+            android:id="@+id/rb_category7"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_handshake"
+            android:text="@string/sosial"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunitosans_regular"
+            android:background="@drawable/bg_radio_button"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_category8"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_movie"
+            android:text="@string/hiburan"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunitosans_regular"
+            android:background="@drawable/bg_radio_button"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_category9"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:drawableTop="@drawable/ic_chart"
+            android:text="@string/investasi"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunitosans_regular"
+            android:background="@drawable/bg_radio_button"/>
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_button"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/save_category"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_category3" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

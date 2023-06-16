@@ -1,58 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="108dp"
     app:cardCornerRadius="4dp"
     app:cardElevation="0dp"
+    android:layout_marginHorizontal="8dp"
     android:layout_marginBottom="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
-            android:text="Super Pel"
-            android:fontFamily="@font/nunitosans_semibold"
-            android:textSize="20sp"
+            android:text="@string/category_budget_item"
+            android:fontFamily="@font/nunitosans_extrabold"
+            android:textSize="12sp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_sisa"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_information"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/nunitosans_semibold"
-            android:text="left"
-            android:textSize="12sp"
-            android:textColor="@color/danger2"
-            app:layout_constraintTop_toBottomOf="@id/tv_category"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toTopOf="@id/ll_nominal">
 
-        <TextView
-            android:id="@+id/tv_nominal"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/consume_budget_item"
+                android:textColor="@color/black"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/budget_budget_item"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_nominal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toTopOf="@id/progressBar_budget">
+
+            <TextView
+                android:id="@+id/tv_consume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="@string/rp0_budget_item_1"
+                android:textColor="@color/danger_one"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="@string/rp0_budget_item_2"
+                android:textAlignment="textEnd"
+                android:textColor="@color/primary_one"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar_budget"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginBottom="16dp"
-            android:fontFamily="@font/nunitosans_semibold"
-            android:text="Category"
-            android:textSize="16sp"
-            android:textColor="@color/danger1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_sisa" />
+            android:minHeight="10dp"
+            android:progressDrawable="@drawable/progress_bar_budget_background"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
