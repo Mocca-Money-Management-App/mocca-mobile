@@ -1,3 +1,151 @@
 <resources>
     <string name="app_name">Mocca</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_syarat_ketentuan"><![CDATA[Terms & Condition]]></string>
+
+    <string name="login">Login</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="email_hint">Your Email</string>
+    <string name="password_hint">Your Password</string>
+    <string name="app_logo_white">Mocca\n Logo White</string>
+    <string name="no_account">Don’t have account yet?</string>
+
+    <string name="register">Register</string>
+    <string name="register_btn">REGISTER</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name_hint">Your Name</string>
+    <string name="phone_number_hint">Your Phone Number</string>
+    <string name="have_account">Already have an account?</string>
+
+    <string name="no_empty">This form must be filled</string>
+    <string name="more_than_8">Password must contain minimal 8 characters</string>
+    <string name="wrong_format">Wrong Email format</string>
+    <string name="invalid_login">Failed Login Attempt</string>
+    <string name="invalid_register">Failed Register Attempt</string>
+    <string name="invalid_edit_budget">Failed Edit Budget Attempt</string>
+    <string name="invalid_add_manual">Failed Add Transaction Attempt</string>
+    <string name="invalid_account">Your account was not available, try another account</string>
+    <string name="invalid_email">Your email already used</string>
+    <string name="congrats">Congratulations!</string>
+    <string name="register_success">Your account was made successfully</string>
+    <string name="login_success">Your login attempt was success</string>
+    <string name="edit_budget_success">Your budget was edited successfully</string>
+    <string name="add_budget_success">Your budget was added successfully</string>
+    <string name="add_manual_success">Your transaction was added successfully</string>
+    <string name="ok">OK</string>
+    <string name="next">Next</string>
+    <string name="logout" translatable="false">Logout</string>
+    <string name="confirm_logout">Do you want to Logout?</string>
+    <string name="exit">Exit App</string>
+    <string name="confirm_exit">Do you want to close the app?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="edit_category">Edit Category</string>
+    <string name="add_category">Add Category</string>
+    <string name="budget">Budget</string>
+    <string name="nominal">Nominal</string>
+    <string name="belanja">Belanja</string>
+    <string name="makanan_minuman">Makanan &amp; Minuman</string>
+    <string name="kesehatan_kecantikan">Kesehatan &amp; Kecantikan</string>
+    <string name="pendidikan">Pendidikan</string>
+    <string name="transportasi">Transportasi</string>
+    <string name="pinjaman_tagihan">Pinjaman &amp; Tagihan</string>
+    <string name="sosial">Sosial</string>
+    <string name="hiburan">Hiburan</string>
+    <string name="investasi">Investasi</string>
+    <string name="save_category">Save Category</string>
+
+    <string name="add_transaction">Add Transaction</string>
+    <string name="add_transaction_manual">Add Transaction Manual</string>
+    <string name="hint_nominal">0</string>
+    <string name="product_name">Product Name</string>
+    <string name="drop_down_type">Drop Down Type</string>
+    <string name="drop_down_category">Drop Down Category</string>
+    <string name="logo_app">Logo App</string>
+
+    <string name="category_budget_item">Category</string>
+    <string name="consume_budget_item">Consume</string>
+    <string name="budget_budget_item">Budget</string>
+    <string name="rp0_budget_item_1">Rp0</string>
+    <string name="rp0_budget_item_2">Rp0</string>
+    <string name="month_2023">Juni 2023</string>
+    <string name="consume_budget">Consume</string>
+    <string name="budget_budget">Budget</string>
+
+    <string name="rp0_budget_1">Rp0</string>
+    <string name="rp0_budget_2">Rp0</string>
+    <string name="budget_category">Budget Category</string>
+    <string name="button_date_previous">Button Date Previous</string>
+    <string name="button_date_next">Button Date Next</string>
+    <string name="no_budget_category">No Budget Category</string>
+
+    <string name="welcome">Welcome,</string>
+    <string name="hi_name">Hi, Name</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="my_balance">My Balance</string>
+    <string name="rp1">Rp</string>
+    <string name="_01">0</string>
+    <string name="overview_budget">Overview Budget</string>
+    <string name="income_home">Income</string>
+    <string name="rp2">Rp</string>
+    <string name="_02">0</string>
+    <string name="expenses_home">Expenses</string>
+    <string name="rp3">Rp</string>
+    <string name="_03">0</string>
+    <string name="recent_transaction">Recent Transaction</string>
+    <string name="more_detail">More detail</string>
+    <string name="no_transaction_yet">No Transaction Yet</string>
+
+    <string name="profile">Profile</string>
+    <string name="nama">Nama</string>
+    <string name="email_gmail_com">email@gmail.com</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="notification">Notification</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="help">Help</string>
+
+    <string name="report">Report</string>
+    <string name="total_income">Total Income</string>
+    <string name="total_expenses">Total Expenses</string>
+    <string name="difference">Difference</string>
+    <string name="no_history_yet">No History Yet</string>
+
+    <string name="category_transaction_item">Category</string>
+    <string name="date_transaction_item">22 Mei 2023</string>
+    <string name="product_transaction_item">Super Pel</string>
+    <string name="price_transaction_item">25.000</string>
+
+    <string-array name="type_array">
+        <item>Income</item>
+        <item>Outcome</item>
+    </string-array>
+
+    <string-array name="category_array">
+        <item>Belanja</item>
+        <item>Makanan &amp; Minuman</item>
+        <item>Kesehatan &amp; Kecantikan</item>
+        <item>Pendidikan</item>
+        <item>Transportasi</item>
+        <item>Pinjaman &amp; Tagihan</item>
+        <item>Sosial</item>
+        <item>Hiburan</item>
+        <item>Investasi</item>
+    </string-array>
+
+    <string name="alarm_time">Alarm Time</string>
+    <string name="set_repeating_alarm">Set Repeating Alarm</string>
+    <string name="alarm_transaction_message">Don\'t forget to save your transaction</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="daily_reminder_setting">Daily Reminder Setting</string>
+    <string name="need_help_title">Need Help?</string>
+    <string name="contact_us_subtitle">Contact us if you need help!</string>
+    <string name="android_engineer_title">Android Engineer</string>
+    <string name="machine_learing_engineer">Machine Learing Engineer</string>
+    <string name="cloud_engineer">Cloud Engineer</string>
 </resources>
