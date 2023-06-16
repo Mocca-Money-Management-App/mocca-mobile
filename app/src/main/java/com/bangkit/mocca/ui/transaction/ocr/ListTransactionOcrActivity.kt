@@ -42,6 +42,10 @@ class ListTransactionOcrActivity : AppCompatActivity() {
             intent.getParcelableExtra(EXTRA_PRODUCT_LIST)
         }
 
+        ocrViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+
         val layoutManager = LinearLayoutManager(this)
         binding.rvListTransaction.layoutManager = layoutManager
         binding.rvListTransaction.setHasFixedSize(true)
@@ -72,7 +76,7 @@ class ListTransactionOcrActivity : AppCompatActivity() {
                 ocrViewModel.postListTransaction(1, updatedList)
                 ocrViewModel.insertTransactionResult.observe(this) { result ->
                     when(result) {
-                        is Result.Loading -> ""
+                        is Result.Loading -> showLoading(true)
 
                         is Result.Success -> {
                             val intent = Intent(this@ListTransactionOcrActivity, MainActivity::class.java)
@@ -80,7 +84,13 @@ class ListTransactionOcrActivity : AppCompatActivity() {
                             finish()
                         }
 
-                        is Result.Error -> ""
+                        is Result.Error -> {
+                            Toast.makeText(
+                                this,
+                                "Failed to send data",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
                 }
             }
@@ -92,6 +102,10 @@ class ListTransactionOcrActivity : AppCompatActivity() {
         val adapter = ListProductOcrAdapter(this@ListTransactionOcrActivity, listProduct)
         binding.rvListTransaction.adapter = adapter
         adapter.notifyDataSetChanged()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     companion object {

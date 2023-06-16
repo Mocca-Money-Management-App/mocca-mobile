@@ -71,9 +71,9 @@ class OCRTransactionActivity : CropImageActivity() {
 
                     is Result.Success -> {
                         Toast.makeText(
-                           this,
-                           "Sukses upload gambar",
-                           Toast.LENGTH_SHORT
+                            this,
+                            "Upload image success",
+                            Toast.LENGTH_SHORT
                         ).show()
 
                         val product = result.data
@@ -85,7 +85,7 @@ class OCRTransactionActivity : CropImageActivity() {
                     is Result.Error -> {
                         Toast.makeText(
                             this,
-                            "Gagal upload gambar",
+                            "Failed to upload image",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -94,7 +94,7 @@ class OCRTransactionActivity : CropImageActivity() {
         } else {
             Toast.makeText(
                 this,
-                "Tidak ada gambar yang di pilih/diambil",
+                "No pictures were selected/taken",
                 Toast.LENGTH_SHORT
             ).show()
         }

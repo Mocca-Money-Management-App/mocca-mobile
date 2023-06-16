@@ -9,22 +9,31 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContract
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bangkit.mocca.data.model.UserModel
+import com.bangkit.mocca.data.model.UserPreference
 import com.bangkit.mocca.databinding.ActivityMainBinding
+import com.bangkit.mocca.ui.home.HomeFragment
+import com.bangkit.mocca.ui.home.HomeViewModel
 import com.bangkit.mocca.ui.transaction.manual.ManualTransactionActivity
 import com.bangkit.mocca.ui.transaction.ocr.OCRTransactionActivity
+import com.bangkit.mocca.utils.ViewModelFactory
+import com.bangkit.mocca.utils.dataStore
+//import com.bangkit.mocca.ui.transaction.ocr.OCRTransactionActivity
 import com.canhub.cropper.CropImage
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,5 +81,9 @@ class MainActivity : AppCompatActivity() {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window?.attributes?.windowAnimations = R.style.BottomDialogAnimation
         dialog.window?.setGravity(Gravity.BOTTOM)
+    }
+
+    companion object {
+        const val USER = "user"
     }
 }

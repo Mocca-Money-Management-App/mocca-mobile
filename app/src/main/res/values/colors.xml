@@ -25,5 +25,6 @@
     <color name="info2">#FFE0AB</color>
     <color name="danger1">#FF605F</color>
     <color name="danger2">#FFAFAF</color>
+    <color name="danger3">#FFD7D7</color>
 
 </resources>
