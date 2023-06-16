@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.mocca.R
 import com.bangkit.mocca.data.model.UserPreference
@@ -35,6 +37,25 @@ class ProfileFragment : Fragment() {
 
         setupViewModel()
         setupAction()
+
+        val pref = UserPreference.getInstance(requireContext().dataStore)
+        val profileViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
+            ProfileViewModel::class.java
+        )
+
+        profileViewModel.getTheme().observe(viewLifecycleOwner) { isDarkMode: Boolean ->
+            if (isDarkMode) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                binding.switchTheme.isChecked = true
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                binding.switchTheme.isChecked = false
+            }
+        }
+
+        binding.switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
+            profileViewModel.saveTheme(isChecked)
+        }
     }
 
     private fun setupViewModel() {

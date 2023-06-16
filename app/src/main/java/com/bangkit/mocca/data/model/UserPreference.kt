@@ -1,10 +1,7 @@
 package com.bangkit.mocca.data.model
 
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
-import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -36,17 +33,17 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         }
     }
 
-//    fun getThemeSetting(): Flow<Boolean> {
-//        return dataStore.data.map {preferences ->
-//            preferences[THEME_KEY] ?: false
-//        }
-//    }
-//
-//    suspend fun saveThemeSetting(isDarkModeActive: Boolean) {
-//        dataStore.edit { preferences ->
-//            preferences[THEME_KEY] = isDarkModeActive
-//        }
-//    }
+    fun getThemeSetting(): Flow<Boolean> {
+        return dataStore.data.map {preferences ->
+            preferences[THEME_KEY] ?: false
+        }
+    }
+
+    suspend fun saveThemeSetting(isDarkModeActive: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[THEME_KEY] = isDarkModeActive
+        }
+    }
 
     companion object {
         @Volatile
@@ -55,7 +52,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private val ID_KEY = intPreferencesKey("idUser")
         private val NAME_KEY = stringPreferencesKey("name")
         private val EMAIL_KEY = stringPreferencesKey("email")
-//        private val THEME_KEY = booleanPreferencesKey("theme")
+        private val THEME_KEY = booleanPreferencesKey("theme")
 
         fun getInstance(dataStore: DataStore<Preferences>): UserPreference {
             return INSTANCE ?: synchronized(this) {

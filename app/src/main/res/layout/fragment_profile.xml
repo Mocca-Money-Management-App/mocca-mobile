@@ -105,19 +105,45 @@
             app:drawableStartCompat="@drawable/ic_profile"
             app:drawableEndCompat="@drawable/ic_chevron_right" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_theme"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:text="@string/theme"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                app:drawableStartCompat="@drawable/ic_theme" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tv_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:drawablePadding="16dp"
-            android:fontFamily="@font/nunito_sans_semibold"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/nunito_sans_semibold"
             android:text="@string/notification"
             android:textColor="@color/black"
+            android:layout_weight="1"
             app:drawableStartCompat="@drawable/ic_notification"
-            app:drawableEndCompat="@drawable/ic_chevron_right" />
+            app:drawableEndCompat="@drawable/ic_chevron_right"/>
 
         <TextView
             android:id="@+id/tv_language"
@@ -133,19 +159,6 @@
             app:drawableStartCompat="@drawable/ic_language"
             app:drawableEndCompat="@drawable/ic_chevron_right" />
 
-        <TextView
-            android:id="@+id/tv_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:drawablePadding="16dp"
-            android:fontFamily="@font/nunito_sans_semibold"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:text="@string/theme"
-            android:textColor="@color/black"
-            app:drawableStartCompat="@drawable/ic_theme"
-            app:drawableEndCompat="@drawable/ic_chevron_right" />
 
         <TextView
             android:id="@+id/tv_syarat_ketentuan"

@@ -48,6 +48,14 @@ class SplashActivity : AppCompatActivity() {
         )[SplashViewModel::class.java]
 
         viewModel.apply {
+            getTheme().observe(this@SplashActivity) { isDarkMode ->
+                if (isDarkMode) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+            }
+
             getUser().observe(this@SplashActivity) {
                 if (it.idUser != 0) {
                     isLogin = true

@@ -21,4 +21,14 @@ class ProfileViewModel(
             pref.deleteUser()
         }
     }
+
+    fun getTheme(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
+    }
+
+    fun saveTheme(isDarkMode: Boolean) {
+        viewModelScope.launch {
+            pref.saveThemeSetting(isDarkMode)
+        }
+    }
 }
