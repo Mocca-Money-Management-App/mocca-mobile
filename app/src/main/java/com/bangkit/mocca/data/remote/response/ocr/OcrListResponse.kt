@@ -1,6 +1,5 @@
-package com.bangkit.mocca.data.remote.response
+package com.bangkit.mocca.data.remote.response.ocr
 
-import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
