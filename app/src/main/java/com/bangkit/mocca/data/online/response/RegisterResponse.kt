@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class TotalResponse (
-    @SerializedName("SUM(PRICE)")
-    val sum: Int
+data class RegisterResponse(
+    @SerializedName("message")
+    val message: String
 ): Parcelable

@@ -6,6 +6,15 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ReportResponse(
+    @SerializedName("success")
+    val idUser: Int,
+
+    @SerializedName("report")
+    val report: List<ReportItem>
+) : Parcelable
+
+@Parcelize
+data class ReportItem(
     @SerializedName("idUser")
     val idUser: Int,
 

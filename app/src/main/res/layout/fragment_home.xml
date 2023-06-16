@@ -9,37 +9,38 @@
 
     <LinearLayout
         android:id="@+id/layout_top_bar"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:orientation="horizontal"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:layout_marginEnd="8dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome,"
                 android:fontFamily="@font/nunito_sans_semibold"
-                android:textSize="16sp"
-                android:textColor="@color/info_one" />
+                android:text="@string/welcome"
+                android:textColor="@color/info_one"
+                android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hi, Elmifta"
                 android:fontFamily="@font/nunito_sans_bold"
+                android:text="@string/hi_name"
                 android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
         </LinearLayout>
 
         <ImageView
@@ -47,8 +48,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:contentDescription="Profile Picture"
-            android:src="@drawable/profile_pic"/>
+            android:contentDescription="@string/profile_picture"
+            android:src="@drawable/profile_pic" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -58,10 +59,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="0dp"
         android:background="@color/white"
         android:orientation="vertical"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_top_bar">
@@ -76,70 +77,71 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:text="My Balance"
                 android:fontFamily="@font/nunito_sans_bold"
-                android:textColor="@color/info_one"/>
+                android:text="@string/my_balance"
+                android:textColor="@color/info_one" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="8dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="Rp"
                     android:fontFamily="@font/nunito_sans"
-                    android:textColor="@color/black"/>
+                    android:text="@string/rp1"
+                    android:textColor="@color/black" />
 
                 <TextView
+                    android:id="@+id/tv_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="150.000"
-                    android:textSize="24sp"
                     android:fontFamily="@font/nunito_sans_bold"
-                    android:textColor="@color/black"/>
+                    android:text="@string/_01"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Overview Budget"
                     android:fontFamily="@font/nunito_sans_bold"
-                    android:textColor="@color/info_one"/>
+                    android:text="@string/overview_budget"
+                    android:textColor="@color/info_one" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
+                    android:weightSum="2">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:background="@color/primary_one"
+                            android:orientation="vertical"
                             android:padding="8dp">
 
                             <LinearLayout
@@ -150,9 +152,9 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Income"
-                                    android:textSize="12sp"
-                                    android:textColor="@color/white"/>
+                                    android:text="@string/income_home"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -164,17 +166,18 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginEnd="4dp"
-                                    android:text="Rp"
                                     android:fontFamily="@font/nunito_sans"
-                                    android:textColor="@color/white"/>
+                                    android:text="@string/rp2"
+                                    android:textColor="@color/white" />
 
                                 <TextView
+                                    android:id="@+id/tv_income"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="150.000"
-                                    android:textSize="18sp"
                                     android:fontFamily="@font/nunito_sans_bold"
-                                    android:textColor="@color/white"/>
+                                    android:text="@string/_02"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -182,16 +185,16 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="4dp"
+                        android:layout_weight="1"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:background="@color/danger_one"
+                            android:orientation="vertical"
                             android:padding="8dp">
 
                             <LinearLayout
@@ -202,9 +205,9 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Expenses"
-                                    android:textSize="12sp"
-                                    android:textColor="@color/white"/>
+                                    android:text="@string/expenses_home"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -216,17 +219,18 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginEnd="4dp"
-                                    android:text="Rp"
                                     android:fontFamily="@font/nunito_sans"
-                                    android:textColor="@color/white"/>
+                                    android:text="@string/rp3"
+                                    android:textColor="@color/white" />
 
                                 <TextView
+                                    android:id="@+id/tv_expenses"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="150.000"
-                                    android:textSize="18sp"
                                     android:fontFamily="@font/nunito_sans_bold"
-                                    android:textColor="@color/white"/>
+                                    android:text="@string/_03"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -241,10 +245,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Recent Transaction"
         android:fontFamily="@font/nunito_sans_bold"
+        android:text="@string/recent_transaction"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_balance" />
 
@@ -253,8 +257,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="More detail"
         android:fontFamily="@font/nunito_sans_semibold"
+        android:text="@string/more_detail"
         android:textColor="@color/info_one"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_label_recent_transaction"
@@ -266,20 +270,51 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito_sans"
-        android:text="No Transaction Yet"
+        android:text="@string/no_transaction_yet"
+        android:visibility="gone"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_label_recent_transaction"
         app:layout_constraintTop_toBottomOf="@+id/tv_label_recent_transaction" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_transactions"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        tools:listitem="@layout/transaction_item"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_label_recent_transaction" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_label_recent_transaction">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:listitem="@layout/transaction_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

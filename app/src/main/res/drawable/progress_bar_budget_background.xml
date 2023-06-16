@@ -3,7 +3,7 @@
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
             <corners android:radius="8dp"/>
-            <solid android:color="@color/danger_two"/>
+            <solid android:color="@color/danger3"/>
         </shape>
     </item>
 
@@ -11,7 +11,7 @@
         <scale android:scaleWidth="100%">
             <shape android:shape="rectangle">
                 <corners android:radius="8dp"/>
-                <solid android:color="@color/danger_one"/>
+                <solid android:color="@color/danger1"/>
             </shape>
         </scale>
     </item>

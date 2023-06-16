@@ -6,6 +6,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class TransactionResponse (
+    @SerializedName("transaction")
+    val transaction: List<ListTransactionItem>
+) : Parcelable
+
+@Parcelize
+data class ListTransactionItem(
     @SerializedName("idUser")
     val idUser: Int,
 
@@ -15,9 +21,9 @@ data class TransactionResponse (
     @SerializedName("name_product")
     val nameProduct: String,
 
-    @SerializedName("idUser")
+    @SerializedName("price")
     val price: Int,
 
     @SerializedName("created_at")
     val createdAt: String
-) : Parcelable
+): Parcelable

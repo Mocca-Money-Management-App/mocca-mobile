@@ -1,9 +1,11 @@
 package com.bangkit.mocca.data.online.api
 
+import com.bangkit.mocca.data.online.response.BudgetResponse
 import com.bangkit.mocca.data.online.response.CategoryResponse
 import com.bangkit.mocca.data.online.response.EditResponse
+import com.bangkit.mocca.data.online.response.LoginResponse
+import com.bangkit.mocca.data.online.response.RegisterResponse
 import com.bangkit.mocca.data.online.response.ReportResponse
-import com.bangkit.mocca.data.online.response.TotalResponse
 import com.bangkit.mocca.data.online.response.TransactionResponse
 import com.bangkit.mocca.data.online.response.UploadResponse
 import okhttp3.MultipartBody
@@ -13,6 +15,7 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Part
 import retrofit2.http.Path
 
@@ -22,15 +25,10 @@ interface ApiService {
         @Part photo: MultipartBody.Part
     ): Call<UploadResponse>
 
-    @GET("dashboard/income/{idUser}")
-    fun getTotalIncome(
+    @GET("totalbudget/{idUser}")
+    fun getTotalBudget(
         @Path("idUser") idUser: Int
-    ): Call<TotalResponse>
-
-    @GET("dashboard/outcome/{idUser}")
-    fun getTotalOutcome(
-        @Path("idUser") idUser: Int
-    ): Call<TotalResponse>
+    ): Call<BudgetResponse>
 
     @GET("getlast10transaction/{idUser}")
     fun getLast10Transactions(
@@ -43,7 +41,7 @@ interface ApiService {
     ): Call<TransactionResponse>
 
     @GET("reportmonth/{idUser}")
-    fun getReportMonth(
+    fun getReport(
         @Path("idUser") idUser: Int
     ): Call<ReportResponse>
 
@@ -52,7 +50,6 @@ interface ApiService {
     fun insertIncome(
         @Path("idUser") idUser: Int,
         @Field("name_product") name_product: String,
-        @Field("categoryid ") categoryid: Int,
         @Field("price") price : Float
     ): Call<EditResponse>
 
@@ -61,7 +58,7 @@ interface ApiService {
     fun insertOutcome(
         @Path("idUser") idUser: Int,
         @Field("name_product") name_product: String,
-        @Field("categoryid ") categoryid: Int,
+        @Field("categoryId") categoryId: Int,
         @Field("price") price : Float
     ): Call<EditResponse>
 
@@ -70,18 +67,37 @@ interface ApiService {
         @Path("idIncome") idIncome: Int
     )
 
-    @DELETE("deleteincome/{idOutcome}")
+    @DELETE("deleteoutcome/{idOutcome}")
     fun deleteOutcome(
         @Path("idOutcome") idOutcome: Int
     )
 
-    @GET("getcategory/:idUser")
+    @GET("getcategory/{idUser}")
     fun getCategory(
         @Path("idUser") idUser: Int
     ): Call<CategoryResponse>
 
-    @POST("insertcategory/{idUser}")
-    fun insertCategory(
+    @FormUrlEncoded
+    @PUT("editcategory/{idUser}/{categoryId}")
+    fun editCategory(
         @Path("idUser") idUser: Int,
+        @Path("categoryId") categoryId: Int,
+        @Field("budget") budget: Float,
     ): Call<EditResponse>
+
+    @FormUrlEncoded
+    @POST("login")
+    fun login(
+        @Field("email") email: String,
+        @Field("passwordUser") password: String
+    ): Call<LoginResponse>
+
+    @FormUrlEncoded
+    @POST("register")
+    fun register(
+        @Field("username") username: String,
+        @Field("email") email: String,
+        @Field("phoneNumber") phoneNumber : String,
+        @Field("passwordUser") passwordUser: String
+    ): Call<RegisterResponse>
 }
