@@ -2,6 +2,7 @@ package com.bangkit.mocca.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bangkit.mocca.R
 import com.bangkit.mocca.data.model.UserPreference
 import com.bangkit.mocca.databinding.FragmentProfileBinding
+import com.bangkit.mocca.ui.HelpActivity
 import com.bangkit.mocca.ui.login.LoginActivity
 import com.bangkit.mocca.utils.ViewModelFactory
 import com.bangkit.mocca.utils.dataStore
@@ -55,6 +57,16 @@ class ProfileFragment : Fragment() {
 
         binding.switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
             profileViewModel.saveTheme(isChecked)
+        }
+
+        binding.tvLanguage.setOnClickListener {
+            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(intent)
+        }
+
+        binding.tvBantuan.setOnClickListener {
+            val intent = Intent(activity, HelpActivity::class.java)
+            startActivity(intent)
         }
 
         binding.tvNotification.setOnClickListener {

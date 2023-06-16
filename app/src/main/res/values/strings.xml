@@ -143,4 +143,9 @@
     <string name="alarm_transaction_message">Don\'t forget to save your transaction</string>
     <string name="daily_reminder">Daily Reminder</string>
     <string name="daily_reminder_setting">Daily Reminder Setting</string>
+    <string name="need_help_title">Need Help?</string>
+    <string name="contact_us_subtitle">Contact us if you need help!</string>
+    <string name="android_engineer_title">Android Engineer</string>
+    <string name="machine_learing_engineer">Machine Learing Engineer</string>
+    <string name="cloud_engineer">Cloud Engineer</string>
 </resources>
